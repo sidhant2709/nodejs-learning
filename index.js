@@ -47,6 +47,7 @@ console.log("mno");
 
 */
 
+/*
 
 const logAfterTimeout = () => {
   setTimeout(() => {
@@ -74,6 +75,8 @@ Promise.resolve("jkl").then((data) => {
 });
 
 console.log("mno");
+
+*/
 
 /*
 function logAbc() {
@@ -105,3 +108,22 @@ Promise.resolve("jkl").then(handlePromise);
 
 console.log("mno");
 */
+
+async function fetchData() {
+  try {
+    console.log("Start fetching data");
+
+    const response = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+    const data = await response.json();
+
+    console.log("Data fetched successfully:", data);
+  } catch (error) {
+    console.log("Error fetching data:", error);
+  }
+
+  console.log("End of fetchData function");
+}
+
+console.log("Before calling fetchData");
+fetchData();
+console.log("After calling fetchData");
